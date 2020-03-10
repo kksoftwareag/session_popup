@@ -1,0 +1,28 @@
+{
+    "name": "webschmiede/session-popup",
+    "type": "typo3-cms-extension",
+    "description": "Configure a popup that appears once a session.",
+    "authors": [
+        {
+            "name": "Karina Kern",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webschmiede\\SessionPopup\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webschmiede\\SessionPopup\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "webschmiede/session-popup": "self.version",
+        "typo3-ter/session-popup": "self.version"
+    }
+}

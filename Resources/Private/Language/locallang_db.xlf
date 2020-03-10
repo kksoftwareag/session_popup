@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2020-03-10T15:11:04Z" product-name="session_popup">
+		<header/>
+		<body>
+			<trans-unit id="tx_session_popup_sessionpopup.name">
+				<source>Session Popup</source>
+			</trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.description">
+				<source>Configure a popup that appears once a session.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

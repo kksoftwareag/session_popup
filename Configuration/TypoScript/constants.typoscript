@@ -1,0 +1,15 @@
+
+plugin.tx_sessionpopup_sessionpopup {
+    view {
+        # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:session_popup/Resources/Private/Templates/
+        # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:session_popup/Resources/Private/Partials/
+        # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:session_popup/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_sessionpopup_sessionpopup//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}
