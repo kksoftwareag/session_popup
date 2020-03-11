@@ -9,6 +9,27 @@
 			<trans-unit id="tx_session_popup_sessionpopup.description">
 				<source>Configure a popup that appears once a session.</source>
 			</trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input">
+                <source>Input</source>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.image">
+                <source>Image</source>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.ce">
+                <source>Content Element</source>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.html">
+                <source>HTML Code</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.link">
+                <source>Link Popup</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.session">
+                <source>Show popup once per session</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.closebutton">
+                <source>Show close button</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
