@@ -38,5 +38,20 @@ class PopupController extends ActionController
      */
     public function showAction()
     {
+        $viewAssign = array();
+        $cObj = $this->configurationManager->getContentObject();
+
+        // content element
+        if ($this->settings['input'] == 'ce') {
+            $cObjConf = array(
+                'tables' => 'tt_content',
+                'source' => $this->settings['ce'],
+                'dontCheckPid' => 1
+            );
+            $contentObject = $cObj->cObjGetSingle('RECORDS', $cObjConf);
+            $viewAssign['ce'] = $contentObject;
+        }
+
+        $this->view->assignMultiple($viewAssign);
     }
 }

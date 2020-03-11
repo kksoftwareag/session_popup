@@ -1,5 +1,29 @@
 <html data-namespace-typo3-fluid="true" lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<f:layout name="Default" />
+
+<f:section name="content">
+    <div id="session_popup">
+        <div id="session_popup_content">
+            <f:if condition="{settings.closebutton}"><div id="session_popup_close"><span>x</span></div></f:if>
+            <f:link.typolink parameter="{settings.link}">
+                <div id="session_popup_inner">
+
+                    <f:switch expression="{settings.input}">
+                        <f:case value="image"><f:image src="uploads/tx_sessionpopup/{settings.popupfile}" width="{settings.imageMaxW}m" height="{settings.imageMaxH}m" /></f:case>
+                        <f:case value="html"><f:format.raw>{settings.html}</f:format.raw></f:case>
+                        <f:case value="ce"><f:format.raw>{ce}</f:format.raw></f:case>
+                    </f:switch>
+
+                </div>
+            </f:link.typolink>
+        </div>
+    </div>
+</f:section>
+
+<f:section name="FooterAssets">
+    <script src="{f:uri.resource(path: 'JavaScript/session_popup.js')}"></script>
+</f:section>
 
 </html>

@@ -23,3 +23,5 @@ plugin.tx_sessionpopup_sessionpopup {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+
+page.includeCSS.sessionpopup = EXT:session_popup/Resources/Public/Css/session_popup.css
