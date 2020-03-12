@@ -39,10 +39,17 @@ class PopupController extends ActionController
     public function showAction()
     {
         $viewAssign = array();
-        $cObj = $this->configurationManager->getContentObject();
+
+        // image
+        if ($this->settings['input'] == 'image') {
+            $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+            $fileReference = $resourceFactory->getFileReferenceObject($this->settings['image']);
+            $viewAssign['image'] = $fileReference;
+        }
 
         // content element
         if ($this->settings['input'] == 'ce') {
+            $cObj = $this->configurationManager->getContentObject();
             $cObjConf = array(
                 'tables' => 'tt_content',
                 'source' => $this->settings['ce'],

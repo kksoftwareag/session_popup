@@ -8,10 +8,6 @@ plugin.tx_sessionpopup_sessionpopup {
         layoutRootPaths.0 = EXT:tx_sessionpopup/Resources/Private/Layouts/
         layoutRootPaths.1 = {$plugin.tx_sessionpopup_sessionpopup.view.layoutRootPath}
     }
-    persistence {
-        storagePid = {$plugin.tx_sessionpopup_sessionpopup.persistence.storagePid}
-        #recursive = 1
-    }
     features {
         #skipDefaultArguments = 1
         # if set to 1, the enable fields are ignored in BE context

@@ -8,8 +8,4 @@ plugin.tx_sessionpopup_sessionpopup {
         # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:session_popup/Resources/Private/Layouts/
     }
-    persistence {
-        # cat=plugin.tx_sessionpopup_sessionpopup//a; type=string; label=Default storage PID
-        storagePid =
-    }
 }

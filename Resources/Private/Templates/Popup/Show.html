@@ -11,7 +11,7 @@
                 <div id="session_popup_inner">
 
                     <f:switch expression="{settings.input}">
-                        <f:case value="image"><f:image src="uploads/tx_sessionpopup/{settings.popupfile}" width="{settings.imageMaxW}m" height="{settings.imageMaxH}m" /></f:case>
+                        <f:case value="image"><f:image image="{image}" maxWidth="{settings.imagewidth}" maxHeight="{settings.imageheight}" /></f:case>
                         <f:case value="html"><f:format.raw>{settings.html}</f:format.raw></f:case>
                         <f:case value="ce"><f:format.raw>{ce}</f:format.raw></f:case>
                     </f:switch>

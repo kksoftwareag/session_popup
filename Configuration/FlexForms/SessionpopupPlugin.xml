@@ -36,7 +36,8 @@
                             <displayCond>FIELD:settings.input:=:image</displayCond>
                             <config>
                                 <type>inline</type>
-                                <maxitems>99</maxitems>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
                                 <foreign_table>sys_file_reference</foreign_table>
                                 <!--<foreign_field>uid_foreign</foreign_field>-->
                                 <foreign_table_field>tablenames</foreign_table_field>
@@ -65,6 +66,26 @@
                             </config>
                         </TCEforms>
                     </settings.image>
+                    <settings.imagewidth>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.image.maxwidth</label>
+                        <displayCond>FIELD:settings.input:=:image</displayCond>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <max>5</max>
+                            <eval>int,trim</eval>
+                        </config>
+                    </settings.imagewidth>
+                    <settings.imageheight>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.image.maxheight</label>
+                        <displayCond>FIELD:settings.input:=:image</displayCond>
+                        <config>
+                            <type>input</type>
+                            <size>5</size>
+                            <max>5</max>
+                            <eval>int,trim</eval>
+                        </config>
+                    </settings.imageheight>
                     <settings.ce>
                         <TCEforms>
                             <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.ce</label>
@@ -101,14 +122,6 @@
                             </config>
                         </TCEforms>
                     </settings.link>
-                    <settings.session>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.session</label>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
-                    </settings.session>
                     <settings.closebutton>
                         <TCEforms>
                             <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.closebutton</label>
@@ -117,6 +130,14 @@
                             </config>
                         </TCEforms>
                     </settings.closebutton>
+                    <settings.session>
+                        <TCEforms>
+                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.session</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.session>
                 </el>
             </ROOT>
         </sDEF>

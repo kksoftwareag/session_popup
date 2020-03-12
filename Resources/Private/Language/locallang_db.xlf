@@ -21,6 +21,12 @@
 			<trans-unit id="tx_session_popup_sessionpopup.input.html">
                 <source>HTML Code</source>
             </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.image.maxwidth">
+                <source>Image maxWidth</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.image.maxheight">
+                <source>Image maxHeight</source>
+            </trans-unit>
             <trans-unit id="tx_session_popup_sessionpopup.link">
                 <source>Link Popup</source>
             </trans-unit>
