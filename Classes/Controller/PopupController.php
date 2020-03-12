@@ -23,6 +23,8 @@ class PopupController extends ActionController
      */
     public function showAction()
     {
+        #$GLOBALS['TSFE']->fe_user->removeSessionData();
+
         $viewAssign = array();
 
         // image
@@ -63,7 +65,7 @@ class PopupController extends ActionController
     protected function generateSessionData() {
 
         $sessionVars = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
-        $sessionVars['shown'] = 1;
+        $sessionVars['plugin'][$this->configurationManager->getContentObject()->data['uid']] = 1;
         $GLOBALS['TSFE']->fe_user->setKey('ses', 'session_popup', $sessionVars);
         $GLOBALS['TSFE']->storeSessionData();
     }
@@ -79,7 +81,7 @@ class PopupController extends ActionController
         $sessionData = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
 
         // already shown?
-        if ($sessionData['shown'] == 1) return true;
+        if ($sessionData['plugin'][$this->configurationManager->getContentObject()->data['uid']] == 1) return true;
 
     }
 

@@ -13,7 +13,7 @@ call_user_func(
             ],
             // non-cacheable actions
             [
-                
+                'Popup' => 'show'
             ]
         );
 
