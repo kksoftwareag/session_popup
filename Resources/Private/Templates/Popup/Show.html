@@ -4,22 +4,24 @@
 <f:layout name="Default" />
 
 <f:section name="content">
-    <div id="session_popup">
-        <div id="session_popup_content">
-            <f:if condition="{settings.closebutton}"><div id="session_popup_close"><span>x</span></div></f:if>
-            <f:link.typolink parameter="{settings.link}">
-                <div id="session_popup_inner">
+    <f:if condition="{show-popup}">
+        <div id="session_popup">
+            <div id="session_popup_content">
+                <f:if condition="{settings.closebutton}"><div id="session_popup_close"><span>x</span></div></f:if>
+                <f:link.typolink parameter="{settings.link}">
+                    <div id="session_popup_inner">
 
-                    <f:switch expression="{settings.input}">
-                        <f:case value="image"><f:image image="{image}" maxWidth="{settings.imagewidth}" maxHeight="{settings.imageheight}" /></f:case>
-                        <f:case value="html"><f:format.raw>{settings.html}</f:format.raw></f:case>
-                        <f:case value="ce"><f:format.raw>{ce}</f:format.raw></f:case>
-                    </f:switch>
+                        <f:switch expression="{settings.input}">
+                            <f:case value="image"><f:image image="{image}" maxWidth="{settings.imagewidth}" maxHeight="{settings.imageheight}" /></f:case>
+                            <f:case value="html"><f:format.raw>{settings.html}</f:format.raw></f:case>
+                            <f:case value="ce"><f:format.raw>{ce}</f:format.raw></f:case>
+                        </f:switch>
 
-                </div>
-            </f:link.typolink>
+                    </div>
+                </f:link.typolink>
+            </div>
         </div>
-    </div>
+    </f:if>
 </f:section>
 
 <f:section name="FooterAssets">
