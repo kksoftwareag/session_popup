@@ -67,13 +67,13 @@ class PopupController extends ActionController
         $sessionVars = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
 
         switch ($this->settings['sessiontype']) {
-            case 'general': // GENERAL
+            case 'global': // GENERAL
                 $sessionVars['global'] = 1;
                 break;
             case 'page': // PAGE ID
                 $sessionVars['page'][$GLOBALS['TSFE']->id] = 1;
                 break;
-            case 'plugin': // PLUGIN UID
+            case 'ce': // CE UID
             default:
                 $sessionVars['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1;
                 break;
@@ -95,13 +95,13 @@ class PopupController extends ActionController
 
         // already shown?
         switch($this->settings['sessiontype']) {
-            case 'general': // GENERAL
+            case 'global': // GENERAL
                 if ($sessionData['global'] == 1) return true;
                 break;
             case 'page': // PAGE ID
                 if ($sessionData['page'][$GLOBALS['TSFE']->id]==1) return true;
                 break;
-            case 'plugin': // CE UID
+            case 'ce': // CE UID
                 if ($sessionData['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1) return true;
                 break;
         }

@@ -33,7 +33,12 @@
                     <settings.image>
                         <TCEforms>
                             <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</label>
-                            <displayCond>FIELD:settings.input:=:image</displayCond>
+                            <displayCond>
+                                <AND>
+                                    <numIndex index="0">FIELD:settings.input:!=:ce</numIndex>
+                                    <numIndex index="1">FIELD:settings.input:!=:html</numIndex>
+                                </AND>
+                            </displayCond>
                             <config>
                                 <type>inline</type>
                                 <minitems>1</minitems>
@@ -133,6 +138,7 @@
                     <settings.session>
                         <TCEforms>
                             <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.session</label>
+                            <onChange>reload</onChange>
                             <config>
                                 <type>check</type>
                             </config>
