@@ -8,7 +8,8 @@ call_user_func(
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'Webschmiede.SessionPopup',
             'Sessionpopup',
-            'Session Popup'
+            'Session Popup',
+            'EXT:session_popup/Resources/Public/Icons/user_plugin_sessionpopup.svg'
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('session_popup', 'Configuration/TypoScript', 'Session Popup');
