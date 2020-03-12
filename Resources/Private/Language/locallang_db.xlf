@@ -33,6 +33,18 @@
             <trans-unit id="tx_session_popup_sessionpopup.session">
                 <source>Show popup once per session</source>
             </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.sessiontype">
+                <source>Session Storage Type</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.sessiontype.global">
+                <source>Global</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.sessiontype.page">
+                <source>Page</source>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.sessiontype.ce">
+                <source>Content Element</source>
+            </trans-unit>
             <trans-unit id="tx_session_popup_sessionpopup.closebutton">
                 <source>Show close button</source>
             </trans-unit>

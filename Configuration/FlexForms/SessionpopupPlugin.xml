@@ -138,6 +138,30 @@
                             </config>
                         </TCEforms>
                     </settings.session>
+                    <settings.sessiontype>
+                        <TCEforms>
+                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype</label>
+                            <displayCond>FIELD:settings.session:=:1</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.global</numIndex>
+                                        <numIndex index="1">global</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.page</numIndex>
+                                        <numIndex index="1">page</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.ce</numIndex>
+                                        <numIndex index="1">ce</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                            <default>2</default>
+                        </TCEforms>
+                    </settings.sessiontype>
                 </el>
             </ROOT>
         </sDEF>

@@ -65,7 +65,20 @@ class PopupController extends ActionController
     protected function generateSessionData() {
 
         $sessionVars = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
-        $sessionVars['plugin'][$this->configurationManager->getContentObject()->data['uid']] = 1;
+
+        switch ($this->settings['sessiontype']) {
+            case 'general': // GENERAL
+                $sessionVars['global'] = 1;
+                break;
+            case 'page': // PAGE ID
+                $sessionVars['page'][$GLOBALS['TSFE']->id] = 1;
+                break;
+            case 'plugin': // PLUGIN UID
+            default:
+                $sessionVars['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1;
+                break;
+        }
+
         $GLOBALS['TSFE']->fe_user->setKey('ses', 'session_popup', $sessionVars);
         $GLOBALS['TSFE']->storeSessionData();
     }
@@ -81,7 +94,17 @@ class PopupController extends ActionController
         $sessionData = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
 
         // already shown?
-        if ($sessionData['plugin'][$this->configurationManager->getContentObject()->data['uid']] == 1) return true;
+        switch($this->settings['sessiontype']) {
+            case 'general': // GENERAL
+                if ($sessionData['global'] == 1) return true;
+                break;
+            case 'page': // PAGE ID
+                if ($sessionData['page'][$GLOBALS['TSFE']->id]==1) return true;
+                break;
+            case 'plugin': // CE UID
+                if ($sessionData['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1) return true;
+                break;
+        }
 
     }
 
