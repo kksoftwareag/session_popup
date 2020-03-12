@@ -7,5 +7,7 @@ plugin.tx_sessionpopup_sessionpopup {
         partialRootPath = EXT:session_popup/Resources/Private/Partials/
         # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:session_popup/Resources/Private/Layouts/
+        # cat=plugin.tx_sessionpopup_sessionpopup/enable; type=boolean; label=Include jQuery
+        includeJQuery = 0
     }
 }

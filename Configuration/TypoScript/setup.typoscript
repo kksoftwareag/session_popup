@@ -21,3 +21,8 @@ plugin.tx_sessionpopup_sessionpopup {
 }
 
 page.includeCSS.sessionpopup = EXT:session_popup/Resources/Public/Css/session_popup.css
+
+page.includeJSFooterlibs {
+    jQueryForSessionPopup = EXT:session_popup/Resources/Public/JavaScript/jquery-3.4.1.slim.min.js
+    jQueryForSessionPopup.if.isTrue = {$plugin.tx_sessionpopup_sessionpopup.view.includeJQuery}
+}
