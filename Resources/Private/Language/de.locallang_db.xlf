@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" datatype="plaintext" original="messages" date="2020-03-10T15:11:04Z" product-name="session_popup">
+		<header/>
+		<body>
+			<trans-unit id="tx_session_popup_sessionpopup.name">
+				<source>Session Popup</source>
+				<target>Session Popup</target>
+			</trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.description">
+				<source>Configure a popup that appears once a session.</source>
+				<target>Ein Popup, das ein mal pro Session angezeigt wird.</target>
+			</trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input">
+                <source>Popup Type</source>
+                <target>Popup Typ</target>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.image">
+                <source>Image</source>
+                <target>Bild</target>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.ce">
+                <source>Content Element</source>
+                <target>Inhaltselement</target>
+            </trans-unit>
+			<trans-unit id="tx_session_popup_sessionpopup.input.html">
+                <source>HTML Code</source>
+                <target>HTML Code</target>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.image.maxwidth">
+                <source>Image maxWidth</source>
+                <target>Bild max. Breite</target>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.image.maxheight">
+                <source>Image maxHeight</source>
+                <target>Bild max. Höhe</target>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.link">
+                <source>Link Popup</source>
+                <target>Popup Link</target>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.session">
+                <source>Show popup once per session</source>
+                <target>Popup ein Mal pro Session anzeigen.</target>
+            </trans-unit>
+            <trans-unit id="tx_session_popup_sessionpopup.closebutton">
+                <source>Show close button</source>
+                <target>Schließen Button anzeigen</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>
