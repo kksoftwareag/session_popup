@@ -73,7 +73,12 @@
                     </settings.image>
                     <settings.imagewidth>
                         <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.image.maxwidth</label>
-                        <displayCond>FIELD:settings.input:=:image</displayCond>
+                        <displayCond>
+                            <AND>
+                                <numIndex index="0">FIELD:settings.input:!=:ce</numIndex>
+                                <numIndex index="1">FIELD:settings.input:!=:html</numIndex>
+                            </AND>
+                        </displayCond>
                         <config>
                             <type>input</type>
                             <size>5</size>
@@ -83,7 +88,12 @@
                     </settings.imagewidth>
                     <settings.imageheight>
                         <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.image.maxheight</label>
-                        <displayCond>FIELD:settings.input:=:image</displayCond>
+                        <displayCond>
+                            <AND>
+                                <numIndex index="0">FIELD:settings.input:!=:ce</numIndex>
+                                <numIndex index="1">FIELD:settings.input:!=:html</numIndex>
+                            </AND>
+                        </displayCond>
                         <config>
                             <type>input</type>
                             <size>5</size>
