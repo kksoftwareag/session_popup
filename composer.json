@@ -1,0 +1,32 @@
+{
+    "name": "kksoftwareag/session-popup",
+    "type": "typo3-cms-extension",
+    "description": "Configure a popup that appears once a session. based on \"webschmiede/session-popup adapted for TYPO3 10",
+    "license": "GPL-3.0-or-later",
+    "version": "3.0.0",
+    "authors": [
+        {
+            "name": "Bernhard Sirlinger",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^10.4"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "KKSoftware\\SessionPopup\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KKSoftware\\SessionPopup\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "kksoftwareag/session-popup": "self.version"
+    }
+}
