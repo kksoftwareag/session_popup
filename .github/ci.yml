@@ -1,0 +1,88 @@
+
+# Configuration for running GitHub actions
+#  based on https://github.com/sypets/brofix/blob/main/.github/workflows/ci.yml
+
+name: CI
+
+on:
+  push:
+  pull_request:
+
+  jobs:
+    v10:
+      name: "v10"
+      runs-on: ubuntu-20.04
+      strategy:
+        # This prevents cancellation of matrix job runs, if one/two already failed and let the
+        # rest matrix jobs be be executed anyway.
+        fail-fast: false
+        matrix:
+          php: [ '7.2', '7.3', '7.4' ]
+          minMax: [ 'composerInstallMin', 'composerInstallMax' ]
+        steps:
+          - name: "Checkout"
+            uses: actions/checkout@v2
+
+          - name: "Set Typo3 core version"
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -t "^10.4" -s composerCoreVersion
+
+          - name: "Composer"
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s ${{ matrix.minMax }}
+
+          - name: "cgl"
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s cgl -v -n
+
+          - name: "Composer validate"
+            if: always()
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
+
+          - name: "Lint PHP"
+            if: always()
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
+
+          - name: "Unit tests"
+            if: always()
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s unit
+
+          - name: "Functional tests with mariadb"
+            if: always()
+            run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -d mariadb -s functional
+    v11:
+      name: "v11"
+      runs-on: ubuntu-20.04
+      strategy:
+        # This prevents cancellation of matrix job runs, if one/two already failed and let the
+        # rest matrix jobs be be executed anyway.
+        fail-fast: false
+        matrix:
+          php: [ '7.4', '8.0', '8.1' ]
+          minMax: [ 'composerInstallMin', 'composerInstallMax' ]
+      steps:
+        - name: "Checkout"
+          uses: actions/checkout@v2
+
+        - name: "Set Typo3 core version"
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -t "^11.5" -s composerCoreVersion
+
+        - name: "Composer"
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s ${{ matrix.minMax }}
+
+        - name: "cgl"
+          if: ${{ matrix.php != '8.1' }}
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s cgl -v -n
+
+        - name: "Composer validate"
+          if: always()
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s composerValidate
+
+        - name: "Lint PHP"
+          if: always()
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s lint
+
+        - name: "Unit tests"
+          if: always()
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -s unit
+
+        - name: "Functional tests with mariadb"
+          if: always()
+          run: Build/Scripts/runTests.sh -p ${{ matrix.php }} -d mariadb -s functional
