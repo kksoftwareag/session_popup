@@ -1,4 +1,5 @@
 <?php
+
 namespace Webschmiede\SessionPopup\Controller;
 
 /***
@@ -12,24 +13,22 @@ namespace Webschmiede\SessionPopup\Controller;
  *
  ***/
 
+use TYPO3\CMS\Core\Resource\ResourceFactory;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class PopupController extends ActionController
 {
     /**
      * Show Session Popup
-     *
-     * @return void
      */
-    public function showAction()
+    public function showAction(): void
     {
-        #$GLOBALS['TSFE']->fe_user->removeSessionData();
-
-        $viewAssign = array();
+        $viewAssign = [];
 
         // image
         if ($this->settings['input'] == 'image') {
-            $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+            $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
             $fileReference = $resourceFactory->getFileReferenceObject($this->settings['image']);
             $viewAssign['image'] = $fileReference;
         }
@@ -37,11 +36,11 @@ class PopupController extends ActionController
         // content element
         if ($this->settings['input'] == 'ce') {
             $cObj = $this->configurationManager->getContentObject();
-            $cObjConf = array(
+            $cObjConf = [
                 'tables' => 'tt_content',
                 'source' => $this->settings['ce'],
                 'dontCheckPid' => 1
-            );
+            ];
             $contentObject = $cObj->cObjGetSingle('RECORDS', $cObjConf);
             $viewAssign['ce'] = $contentObject;
         }
@@ -52,19 +51,16 @@ class PopupController extends ActionController
             $viewAssign['show-popup'] = $showPopup;
             // store in session
             if ($this->settings['session']) {
-                $sessionVars = $this->generateSessionData();
+                $this->generateSessionData();
             }
         }
 
         $this->view->assignMultiple($viewAssign);
     }
 
-    /**
-     * @return void
-     */
-    protected function generateSessionData() {
-
-        $sessionVars = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
+    protected function generateSessionData(): void
+    {
+        $sessionVars = $GLOBALS['TSFE']->fe_user->getKey('ses', 'session_popup');
 
         switch ($this->settings['sessiontype']) {
             case 'global': // GENERAL
@@ -84,29 +80,39 @@ class PopupController extends ActionController
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
-    protected function alreadyShown() {
+    protected function alreadyShown(): bool
+    {
         // do not check if session storage is disabled in FlexForm
-        if (!$this->settings['session']) return false;
-
-        // get session data
-        $sessionData = $GLOBALS['TSFE']->fe_user->getKey('ses','session_popup');
-
-        // already shown?
-        switch($this->settings['sessiontype']) {
-            case 'global': // GENERAL
-                if ($sessionData['global'] == 1) return true;
-                break;
-            case 'page': // PAGE ID
-                if ($sessionData['page'][$GLOBALS['TSFE']->id]==1) return true;
-                break;
-            case 'ce': // CE UID
-                if ($sessionData['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1) return true;
-                break;
+        if (!$this->settings['session']) {
+            return false;
         }
 
+        // get session data
+        $sessionData = $GLOBALS['TSFE']->fe_user->getKey('ses', 'session_popup');
+
+        // already shown?
+        switch ($this->settings['sessiontype']) {
+            case 'global': // GENERAL
+                if ($sessionData['global'] == 1) {
+                    return true;
+                }
+                break;
+            case 'page': // PAGE ID
+                if ($sessionData['page'][$GLOBALS['TSFE']->id]==1) {
+                    return true;
+                }
+                break;
+            case 'ce': // CE UID
+                if ($sessionData['ce'][$this->configurationManager->getContentObject()->data['uid']] == 1) {
+                    return true;
+                }
+                break;
+            default:
+                return false;
+        }
+
+        return false;
     }
-
 }
-
