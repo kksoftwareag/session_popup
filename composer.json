@@ -11,10 +11,15 @@
         }
     ],
     "require": {
-        "typo3/cms-core": "^10.4"
+        "php": "^7.2 || ^7.3 || ^7.4 || ^8.0 || ^8.1",
+        "typo3/cms-core": "^10.4 || ^11.5"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
     },
     "autoload": {
         "psr-4": {
@@ -28,5 +33,20 @@
     },
     "replace": {
         "kksoftwareag/session-popup": "self.version"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+        ],
+        "post-install-cmd": [
+            "echo $PWD && rm $PWD/.Build/Web/typo3conf/ext/session_popup && ln -s ./../../../../ $PWD/.Build/Web/typo3conf/ext/session_popup"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "session_popup",
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web"
+        }
     }
 }

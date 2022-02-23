@@ -1,3 +1,6 @@
-/__MACOSX
-composer.lock
-/.idea
+.Build/
+node_modules/
+.idea/
+Build/testing-docker/.env
+Resources/Public/Css/
+/Build/.phpunit.result.cache
