@@ -15,11 +15,20 @@
         "typo3/cms-core": "^10.4 || ^11.5"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest"
+        "roave/security-advisories": "dev-latest",
+        "friendsofphp/php-cs-fixer": "^3.2",
+        "phpstan/phpstan": "^1.4.5",
+        "phpunit/phpunit": "^8.5.21",
+        "typo3/testing-framework": "^6.15.1"
     },
     "config": {
+        "sort-packages": true,
         "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
+        "bin-dir": ".Build/bin",
+        "allow-plugins": {
+            "typo3/cms-composer-installers": true,
+            "typo3/class-alias-loader": true
+        }
     },
     "autoload": {
         "psr-4": {
@@ -31,15 +40,9 @@
             "KKSoftware\\SessionPopup\\Tests\\": "Tests"
         }
     },
-    "replace": {
-        "kksoftwareag/session-popup": "self.version"
-    },
     "scripts": {
         "post-autoload-dump": [
             "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-        ],
-        "post-install-cmd": [
-            "echo $PWD && rm $PWD/.Build/Web/typo3conf/ext/session_popup && ln -s ./../../../../ $PWD/.Build/Web/typo3conf/ext/session_popup"
         ]
     },
     "extra": {
