@@ -18,7 +18,7 @@
         "roave/security-advisories": "dev-latest",
         "friendsofphp/php-cs-fixer": "^3.2",
         "phpstan/phpstan": "^1.4.5",
-        "phpunit/phpunit": "^8.5.21",
+        "phpunit/phpunit": "^9.6.12",
         "typo3/testing-framework": "^6.15.1"
     },
     "config": {
