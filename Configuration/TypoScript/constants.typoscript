@@ -1,4 +1,3 @@
-
 plugin.tx_sessionpopup_sessionpopup {
     view {
         # cat=plugin.tx_sessionpopup_sessionpopup/file; type=string; label=Path to template root (FE)
@@ -9,5 +8,9 @@ plugin.tx_sessionpopup_sessionpopup {
         layoutRootPath = EXT:session_popup/Resources/Private/Layouts/
         # cat=plugin.tx_sessionpopup_sessionpopup/enable; type=boolean; label=Include jQuery
         includeJQuery = 0
+    }
+    persistence {
+        # cat=plugin.tx_sessionpopup_sessionpopup//a; type=string; label=Default storage PID
+        storagePid =
     }
 }

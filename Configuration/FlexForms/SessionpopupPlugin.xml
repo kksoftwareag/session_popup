@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <T3DataStructure>
     <sheets>
         <sDEF>
@@ -13,6 +14,7 @@
                             <onChange>reload</onChange>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items>
                                     <numIndex index="1">
                                         <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</numIndex>
@@ -160,6 +162,7 @@
                             <displayCond>FIELD:settings.session:=:1</displayCond>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.global</numIndex>

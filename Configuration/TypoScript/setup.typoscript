@@ -1,12 +1,15 @@
-
 plugin.tx_sessionpopup_sessionpopup {
     view {
-        templateRootPaths.0 = EXT:{extension.shortExtensionKey}/Resources/Private/Templates/
+        templateRootPaths.0 = EXT:session_popup/Resources/Private/Templates/
         templateRootPaths.1 = {$plugin.tx_sessionpopup_sessionpopup.view.templateRootPath}
         partialRootPaths.0 = EXT:session_popup/Resources/Private/Partials/
         partialRootPaths.1 = {$plugin.tx_sessionpopup_sessionpopup.view.partialRootPath}
-        layoutRootPaths.0 = EXT:tx_sessionpopup/Resources/Private/Layouts/
+        layoutRootPaths.0 = EXT:session_popup/Resources/Private/Layouts/
         layoutRootPaths.1 = {$plugin.tx_sessionpopup_sessionpopup.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_sessionpopup_sessionpopup.persistence.storagePid}
+        #recursive = 1
     }
     features {
         #skipDefaultArguments = 1

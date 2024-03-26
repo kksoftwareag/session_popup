@@ -11,7 +11,9 @@ namespace Webschmiede\SessionPopup\Controller;
  * (c) 2020 Karina Kern <karina@webschmiede.at>, Webschmiede GmbH
  *
  ***/
-
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Resource\ResourceFactory;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 class PopupController extends ActionController
@@ -19,17 +21,17 @@ class PopupController extends ActionController
     /**
      * Show Session Popup
      *
-     * @return void
+     * @return ResponseInterface
      */
-    public function showAction()
+    public function showAction(): ResponseInterface
     {
         #$GLOBALS['TSFE']->fe_user->removeSessionData();
 
-        $viewAssign = array();
+        $viewAssign = [];
 
         // image
         if ($this->settings['input'] == 'image') {
-            $resourceFactory = \TYPO3\CMS\Core\Resource\ResourceFactory::getInstance();
+            $resourceFactory = GeneralUtility::makeInstance(ResourceFactory::class);
             $fileReference = $resourceFactory->getFileReferenceObject($this->settings['image']);
             $viewAssign['image'] = $fileReference;
         }
@@ -37,11 +39,7 @@ class PopupController extends ActionController
         // content element
         if ($this->settings['input'] == 'ce') {
             $cObj = $this->configurationManager->getContentObject();
-            $cObjConf = array(
-                'tables' => 'tt_content',
-                'source' => $this->settings['ce'],
-                'dontCheckPid' => 1
-            );
+            $cObjConf = ['tables' => 'tt_content', 'source' => $this->settings['ce'], 'dontCheckPid' => 1];
             $contentObject = $cObj->cObjGetSingle('RECORDS', $cObjConf);
             $viewAssign['ce'] = $contentObject;
         }
@@ -57,6 +55,7 @@ class PopupController extends ActionController
         }
 
         $this->view->assignMultiple($viewAssign);
+        return $this->htmlResponse();
     }
 
     /**
