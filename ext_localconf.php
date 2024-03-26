@@ -4,7 +4,7 @@ defined('TYPO3') || die('Access denied.');
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'SessionPopup',
-        'Sessionpopup_sessionpopup',
+        'Sessionpopup',
         [
             \Webschmiede\SessionPopup\Controller\PopupController::class => 'show'
         ],
