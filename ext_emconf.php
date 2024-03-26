@@ -17,10 +17,10 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Karina Kern',
     'author_email' => 'karina@webschmiede.at',
     'state' => 'beta',
-    'version' => '2.0.0',
+    'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-9.5.99',
+            'typo3' => '12.2.0-12.2.99',
         ],
         'conflicts' => [],
         'suggests' => [],
