@@ -79,7 +79,7 @@ class PopupController extends ActionController
         }
 
         $GLOBALS['TSFE']->fe_user->setKey('ses', 'session_popup', $sessionVars);
-        $GLOBALS['TSFE']->storeSessionData();
+        $GLOBALS['TSFE']->fe_user->storeSessionData();
     }
 
     /**
