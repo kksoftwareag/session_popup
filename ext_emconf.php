@@ -10,7 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = [
+ $EM_CONF[$_EXTKEY] = [
     'title' => 'Session Popup',
     'description' => 'Configure a popup that appears once a session.',
     'category' => 'plugin',
@@ -20,7 +20,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '12.0.0-12.4.99',
+            'typo3' => '10.4.0-0.0.0',
         ],
         'conflicts' => [],
         'suggests' => [],
