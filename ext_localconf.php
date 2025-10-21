@@ -1,7 +1,7 @@
 <?php
 defined('TYPO3') || die('Access denied.');
 
-(static function() {
+(static function(): void {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'SessionPopup',
         'Sessionpopup',

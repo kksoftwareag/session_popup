@@ -1,7 +1,8 @@
 {
-    "name": "webschmiede/session_popup",
+    "name": "kksoftwareag/session-popup",
     "type": "typo3-cms-extension",
-    "description": "Configure a popup that appears once a session.",
+    "description": "Configure a popup that appears once a session. based on \"webschmiede/session-popup ",
+    "version": "4.0.0",
     "authors": [
         {
             "name": "Karina Kern",
@@ -10,11 +11,15 @@
         {
             "name": "Thomas Paul",
             "role": "Developer"
+        },
+        {
+          "name": "Bernhard Sirlinger",
+          "role": "Developer"
         }
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": ">=10|| >=11.5"
+        "typo3/cms-core": ">= 12.4"
     },
     "require-dev": {
         "typo3/testing-framework": "^8.0"

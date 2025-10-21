@@ -17,10 +17,10 @@
     'author' => 'Karina Kern',
     'author_email' => 'karina@webschmiede.at',
     'state' => 'beta',
-    'version' => '3.0.0',
+    'version' => '4.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-0.0.0',
+            'typo3' => '12.4.0-12.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

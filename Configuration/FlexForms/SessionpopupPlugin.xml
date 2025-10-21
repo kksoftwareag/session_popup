@@ -3,75 +3,69 @@
     <sheets>
         <sDEF>
             <ROOT>
-                <TCEforms>
-                    <sheetTitle>Einstellungen</sheetTitle>
-                </TCEforms>
+                <sheetTitle>Einstellungen</sheetTitle>
                 <type>array</type>
                 <el>
                     <settings.input>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input</label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items>
-                                    <numIndex index="1">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</numIndex>
-                                        <numIndex index="1">image</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.ce</numIndex>
-                                        <numIndex index="1">ce</numIndex>
-                                    </numIndex>
-                                    <numIndex index="3">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.html</numIndex>
-                                        <numIndex index="1">html</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="1">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</numIndex>
+                                    <numIndex index="1">image</numIndex>
+                                </numIndex>
+                                <numIndex index="2">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.ce</numIndex>
+                                    <numIndex index="1">ce</numIndex>
+                                </numIndex>
+                                <numIndex index="3">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.html</numIndex>
+                                    <numIndex index="1">html</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
                     </settings.input>
                     <settings.image>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</label>
-                            <displayCond>
-                                <AND>
-                                    <numIndex index="0">FIELD:settings.input:!=:ce</numIndex>
-                                    <numIndex index="1">FIELD:settings.input:!=:html</numIndex>
-                                </AND>
-                            </displayCond>
-                            <config>
-                                <type>inline</type>
-                                <minitems>1</minitems>
-                                <maxitems>1</maxitems>
-                                <foreign_table>sys_file_reference</foreign_table>
-                                <!--<foreign_field>uid_foreign</foreign_field>-->
-                                <foreign_table_field>tablenames</foreign_table_field>
-                                <foreign_label>uid_local</foreign_label>
-                                <foreign_sortby>sorting_foreign</foreign_sortby>
-                                <foreign_selector>uid_local</foreign_selector>
-                                <foreign_selector_fieldTcaOverride type="array">
-                                    <config>
-                                        <appearance>
-                                            <elementBrowserType>file</elementBrowserType>
-                                            <elementBrowserAllowed>jpg,jpeg,png</elementBrowserAllowed>
-                                        </appearance>
-                                    </config>
-                                </foreign_selector_fieldTcaOverride>
-                                <foreign_match_fields type="array">
-                                    <fieldname>image</fieldname>
-                                </foreign_match_fields>
-                                <appearance type="array">
-                                    <newRecordLinkAddTitle>1</newRecordLinkAddTitle>
-                                    <headerThumbnail>
-                                        <field>uid_local</field>
-                                        <height>64</height>
-                                        <width>64</width>
-                                    </headerThumbnail>
-                                </appearance>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.image</label>
+                        <displayCond>
+                            <AND>
+                                <numIndex index="0">FIELD:settings.input:!=:ce</numIndex>
+                                <numIndex index="1">FIELD:settings.input:!=:html</numIndex>
+                            </AND>
+                        </displayCond>
+                        <config>
+                            <type>inline</type>
+                            <minitems>1</minitems>
+                            <maxitems>1</maxitems>
+                            <foreign_table>sys_file_reference</foreign_table>
+                            <!--<foreign_field>uid_foreign</foreign_field>-->
+                            <foreign_table_field>tablenames</foreign_table_field>
+                            <foreign_label>uid_local</foreign_label>
+                            <foreign_sortby>sorting_foreign</foreign_sortby>
+                            <foreign_selector>uid_local</foreign_selector>
+                            <foreign_selector_fieldTcaOverride type="array">
+                                <config>
+                                    <appearance>
+                                        <elementBrowserType>file</elementBrowserType>
+                                        <elementBrowserAllowed>jpg,jpeg,png</elementBrowserAllowed>
+                                    </appearance>
+                                </config>
+                            </foreign_selector_fieldTcaOverride>
+                            <foreign_match_fields type="array">
+                                <fieldname>image</fieldname>
+                            </foreign_match_fields>
+                            <appearance type="array">
+                                <newRecordLinkAddTitle>1</newRecordLinkAddTitle>
+                                <headerThumbnail>
+                                    <field>uid_local</field>
+                                    <height>64</height>
+                                    <width>64</width>
+                                </headerThumbnail>
+                            </appearance>
+                        </config>
                     </settings.image>
                     <settings.imagewidth>
                         <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.image.maxwidth</label>
@@ -82,10 +76,10 @@
                             </AND>
                         </displayCond>
                         <config>
-                            <type>input</type>
+                            <type>number</type>
                             <size>5</size>
                             <max>5</max>
-                            <eval>int,trim</eval>
+                            <eval>trim</eval>
                         </config>
                     </settings.imagewidth>
                     <settings.imageheight>
@@ -97,89 +91,77 @@
                             </AND>
                         </displayCond>
                         <config>
-                            <type>input</type>
+                            <type>number</type>
                             <size>5</size>
                             <max>5</max>
-                            <eval>int,trim</eval>
+                            <eval>trim</eval>
                         </config>
                     </settings.imageheight>
                     <settings.ce>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.ce</label>
-                            <displayCond>FIELD:settings.input:=:ce</displayCond>
-                            <config>
-                                <type>group</type>
-                                <internal_type>db</internal_type>
-                                <allowed>tt_content</allowed>
-                                <size>1</size>
-                                <minitems>1</minitems>
-                                <maxitems>999</maxitems>
-                                <show_thumbs>1</show_thumbs>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.ce</label>
+                        <displayCond>FIELD:settings.input:=:ce</displayCond>
+                        <config>
+                            <type>group</type>
+                            <internal_type>db</internal_type>
+                            <allowed>tt_content</allowed>
+                            <size>1</size>
+                            <minitems>1</minitems>
+                            <maxitems>999</maxitems>
+                            <show_thumbs>1</show_thumbs>
+                        </config>
                     </settings.ce>
                     <settings.html>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.html</label>
-                            <displayCond>FIELD:settings.input:=:html</displayCond>
-                            <config>
-                                <type>text</type>
-                                <renderType>t3editor</renderType>
-                                <format>html</format>
-                                <rows>7</rows>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.input.html</label>
+                        <displayCond>FIELD:settings.input:=:html</displayCond>
+                        <config>
+                            <type>text</type>
+                            <renderType>t3editor</renderType>
+                            <format>html</format>
+                            <rows>7</rows>
+                        </config>
                     </settings.html>
                     <settings.link>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.link</label>
-                            <config>
-                                <type>input</type>
-                                <renderType>inputLink</renderType>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.link</label>
+                        <config>
+                            <type>input</type>
+                            <renderType>inputLink</renderType>
+                        </config>
                     </settings.link>
                     <settings.closebutton>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.closebutton</label>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.closebutton</label>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.closebutton>
                     <settings.session>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.session</label>
-                            <onChange>reload</onChange>
-                            <config>
-                                <type>check</type>
-                            </config>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.session</label>
+                        <onChange>reload</onChange>
+                        <config>
+                            <type>check</type>
+                        </config>
                     </settings.session>
                     <settings.sessiontype>
-                        <TCEforms>
-                            <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype</label>
-                            <displayCond>FIELD:settings.session:=:1</displayCond>
-                            <config>
-                                <type>select</type>
-                                <renderType>selectSingle</renderType>
-                                <items type="array">
-                                    <numIndex index="0" type="array">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.global</numIndex>
-                                        <numIndex index="1">global</numIndex>
-                                    </numIndex>
-                                    <numIndex index="1" type="array">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.page</numIndex>
-                                        <numIndex index="1">page</numIndex>
-                                    </numIndex>
-                                    <numIndex index="2" type="array">
-                                        <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.ce</numIndex>
-                                        <numIndex index="1">ce</numIndex>
-                                    </numIndex>
-                                </items>
-                            </config>
-                            <default>2</default>
-                        </TCEforms>
+                        <label>LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype</label>
+                        <displayCond>FIELD:settings.session:=:1</displayCond>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items type="array">
+                                <numIndex index="0" type="array">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.global</numIndex>
+                                    <numIndex index="1">global</numIndex>
+                                </numIndex>
+                                <numIndex index="1" type="array">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.page</numIndex>
+                                    <numIndex index="1">page</numIndex>
+                                </numIndex>
+                                <numIndex index="2" type="array">
+                                    <numIndex index="0">LLL:EXT:session_popup/Resources/Private/Language/locallang_db.xlf:tx_session_popup_sessionpopup.sessiontype.ce</numIndex>
+                                    <numIndex index="1">ce</numIndex>
+                                </numIndex>
+                            </items>
+                        </config>
+                        <default>2</default>
                     </settings.sessiontype>
                 </el>
             </ROOT>

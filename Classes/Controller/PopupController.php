@@ -38,7 +38,7 @@ class PopupController extends ActionController
 
         // content element
         if ($this->settings['input'] == 'ce') {
-            $cObj = $this->configurationManager->getContentObject();
+            $cObj = $this->request->getAttribute('currentContentObject');
             $cObjConf = ['tables' => 'tt_content', 'source' => $this->settings['ce'], 'dontCheckPid' => 1];
             $contentObject = $cObj->cObjGetSingle('RECORDS', $cObjConf);
             $viewAssign['ce'] = $contentObject;
@@ -74,7 +74,7 @@ class PopupController extends ActionController
                 break;
             case 'ce': // CE UID
             default:
-                $sessionVars['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1;
+                $sessionVars['ce'][$this->request->getAttribute('currentContentObject')->data['uid']] = 1;
                 break;
         }
 
@@ -101,7 +101,7 @@ class PopupController extends ActionController
                 if ($sessionData['page'][$GLOBALS['TSFE']->id]==1) return true;
                 break;
             case 'ce': // CE UID
-                if ($sessionData['ce'][$this->configurationManager->getContentObject()->data['uid']] = 1) return true;
+                if ($sessionData['ce'][$this->request->getAttribute('currentContentObject')->data['uid']] = 1) return true;
                 break;
         }
 
